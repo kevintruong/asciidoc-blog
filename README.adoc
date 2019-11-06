@@ -1,10 +1,10 @@
-= Couchbase Documentation Site
+= Ravstudio Documentation Site
 :idprefix:
 :idseparator: -
 // Settings:
 :hide-uri-scheme:
 // URLs:
-:url-docs: https://docs.couchbase.com
+:url-docs: https://docs.ravstudio.com
 :url-contribute: {url-docs}/home/contribute/
 :url-org: https://github.com/couchbase
 :url-ui: {url-org}/docs-ui
