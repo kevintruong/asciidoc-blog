@@ -1,5 +1,5 @@
 site:
-  title: Couchbase Docs (Staging)
+  title: KEVIN TRUONG BLOGS
   url: https://ravstudio.me
   start_page: home::index.adoc
 content:
@@ -27,7 +27,7 @@ asciidoc:
   - asciidoctor-plantuml
 ui:
   bundle:
-    url: https://github.com/couchbase/docs-ui/releases/download/v227/ui-bundle.zip
+    url: ./ui-bundle.zip
   output_dir: _/ui
   supplemental_files:
   - path: robots.txt
