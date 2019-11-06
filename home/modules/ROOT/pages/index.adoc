@@ -13,13 +13,16 @@ Check out the https://developer.couchbase.com[Developer Portal]!
 == {empty}
 
 [.card]
-=== Administrators
+=== Contribute
 
 If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
 
-* xref:server:install:get-started.adoc[Deployment Options]
-* xref:server:learn:security/security-overview.adoc[Security]
-* xref:server:backup-restore:backup-restore.adoc[Backup and Restore]
+* xref:contribute:add-pages.adoc[Add Pages]
+* xref:contribute:asciidoc-overview.adoc[AsciiDoc Overview]
+* xref:contribute:attributes-and-roles.adoc[Attributes and Roles]
+* xref:contribute:basics.adoc[Basics]
+
+
 
 [.card]
 === Developers
