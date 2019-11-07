@@ -52,11 +52,24 @@ If you are a Couchbase user wanting to develop for applications on the edge
 * xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
 * xref:tutorials::index.adoc[Tutorials]
 
+
+[.cards.cards.life-style.conceal-title]
+== {empty}
+
+[.card]
+=== My Life Style
+Love travel a lot
+
+* xref:sync-gateway::getting-started.adoc[Get Started: Sync Gateway]
+* xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
+* xref:tutorials::index.adoc[Tutorials]
+
+
 [.tiles.browse]
-== Browse Documentation
+== My Work
 
 [.tile]
-.xref:server:introduction:intro.adoc[Server]
+.ELinkGate
 * xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
 * xref:server:fts:full-text-intro.adoc[Full Text Search]
 * xref:server:analytics:introduction.adoc[Analytics]
@@ -64,17 +77,17 @@ If you are a Couchbase user wanting to develop for applications on the edge
 * xref:server:sdk:overview.adoc[SDKs]
 
 [.tile]
-.Couchbase Mobile
+.STYL
 * xref:couchbase-lite::index.adoc[Lite]
 * xref:sync-gateway::index.adoc[Sync Gateway]
 
 [.tile]
-.Couchbase Cloud
+.Raven
 * https://info.couchbase.com/rs/302-GJY-034/images/10min_to_Cloud_vF.pdf[Public Cloud]
 * xref:operator::overview.adoc[Autonomous Operator]
 
 [.tile]
-.xref:server:connectors:intro.adoc[Connectors]
+.VEriK Systems
 * xref:elasticsearch-connector::index.adoc[Elasticsearch]
 * xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
 * xref:kafka-connector::index.adoc[Kafka]
