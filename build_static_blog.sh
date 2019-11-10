@@ -9,5 +9,5 @@ echo $UI_BUNDLE
 cd "$UI_BUNDLE" && zip -r $CUR_DIR/ui-bundle.zip ./
 cd $CUR_DIR || exit
 echo "antora build static blog website"
-docker run -v `pwd`:/antora --rm -t antora:latest --stacktrace staging-antora-playbook.yml
+docker run -v `pwd`:/antora --rm -t antora:latest --stacktrace kevin_antora_playbook.yml
 

@@ -8,6 +8,9 @@ content:
   - url: .
     branches: HEAD
     start_path: home
+  - url: ./eframework
+#    branches: master
+    start_path: docs
 asciidoc:
   attributes:
     experimental: ''

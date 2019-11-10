@@ -1,96 +1,66 @@
-= Welcome to Couchbase Docs!
+= Welcome to Kevin Truong Blogs!
 :page-layout: home
 :!sectids:
 
-Welcome to the new home of Couchbase documentation!
-We’d love to hear from you. Feel free to use the btn:[Feedback?] button on any page to share your feedback and concerns.
-
-[.hint]
-Looking for non-documentation resources?
-Check out the https://developer.couchbase.com[Developer Portal]!
-
-[.cards.cards-4.personas.conceal-title]
+[.cards.cards-2.personas.conceal-title]
 == {empty}
+
+[.card]
+=== Knowledge Base
+
+My write for engineer life
+
+* xref:knowledge-base:eFramework-my-embedded-framework.adoc[eFramework - A tiny embedded framework]
+* xref:knowledge-base:embedded-c-object-oriented-programming.adoc[Embedded C,Object oriented programming - HOW TO]
+* xref:knowledge-base:design-of-everything.adoc[Design of Everything]
 
 [.card]
 === Contribute
 
-If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
+If you are interesting with my work please following the guideline bellow for contributing
 
 * xref:contribute:add-pages.adoc[Add Pages]
 * xref:contribute:asciidoc-overview.adoc[AsciiDoc Overview]
 * xref:contribute:attributes-and-roles.adoc[Attributes and Roles]
 * xref:contribute:basics.adoc[Basics]
 
+<<<
+
+== My Open Source Project
+
+[.card-lifestyle]
+=== eFramework
+
+All write related to my working on eFramework
+
+* xref:e-framework::index.adoc[eFramework Home]
+* xref:e-framework::eframework-my-embedded-framework.adoc[eFramework architecture]
 
 
-[.card]
-=== Developers
+== Welcome to my Blogs
 
-If you are a Couchbase user wanting to develop an application using our SDKs
-
-* xref:java-sdk::start-using-sdk.adoc[Quick Install]
-* xref:java-sdk::sample-application.adoc[Sample Application]
-* xref:java-sdk::core-operations.adoc[CRUD]
-* xref:tutorials::index.adoc[Tutorials]
-
-[.card]
-=== SQL Developers
-
-If you are a Couchbase user wanting to understand how to develop queries
-
-* xref:server:getting-started:do-a-quick-install.adoc[Quick Install]
-* xref:server:getting-started:try-a-query.adoc[Try a N1QL Query]
-* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
-
-[.card]
-=== Mobile Developers
-
-If you are a Couchbase user wanting to develop for applications on the edge
-
-* xref:sync-gateway::getting-started.adoc[Get Started: Sync Gateway]
-* xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
-* xref:tutorials::index.adoc[Tutorials]
-
-
-[.cards.cards.life-style.conceal-title]
-== {empty}
-
-[.card]
+[.card-travel]
 === My Life Style
+
 Love travel a lot
 
-* xref:sync-gateway::getting-started.adoc[Get Started: Sync Gateway]
-* xref:couchbase-lite::index.adoc[Get Started: Couchbase Lite]
-* xref:tutorials::index.adoc[Tutorials]
-
+* xref:travel:index.adoc[Ta Nang Phan Dung Trekking]
 
 [.tiles.browse]
 == My Work
 
 [.tile]
-.ELinkGate
-* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
-* xref:server:fts:full-text-intro.adoc[Full Text Search]
-* xref:server:analytics:introduction.adoc[Analytics]
-* xref:server:eventing:eventing-overview.adoc[Eventing]
-* xref:server:sdk:overview.adoc[SDKs]
+.STYL
+* xref:my-work:STYL.adoc[My Work At STYL]
 
 [.tile]
-.STYL
-* xref:couchbase-lite::index.adoc[Lite]
-* xref:sync-gateway::index.adoc[Sync Gateway]
+.ELinkGate
+* xref:my-work:ELINKGATE.adoc[My Work At ELINKGATE]
 
 [.tile]
 .Raven
-* https://info.couchbase.com/rs/302-GJY-034/images/10min_to_Cloud_vF.pdf[Public Cloud]
-* xref:operator::overview.adoc[Autonomous Operator]
+* xref:my-work:RAVEN.adoc[My Work At Raven]
 
 [.tile]
 .VEriK Systems
-* xref:elasticsearch-connector::index.adoc[Elasticsearch]
-* xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
-* xref:kafka-connector::index.adoc[Kafka]
-* xref:spark-connector::index.adoc[Spark]
-* xref:talend-connector::index.adoc[Talend]
-* xref:server:connectors:odbc-jdbc-drivers.adoc[SQL (ODBC/JDBC)]
+* xref:my-work:VEriKSystems.adoc[My Work At VRIKSystems]
