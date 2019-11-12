@@ -32,6 +32,7 @@ My write for engineer life
 * xref:knowledge-base:eFramework-my-embedded-framework.adoc[eFramework - A tiny embedded framework]
 * xref:knowledge-base:embedded-c-object-oriented-programming.adoc[Embedded C,Object oriented programming - HOW TO]
 * xref:knowledge-base:design-of-everything.adoc[Design of Everything]
+* xref:knowledge-base:git-describe-and-my-work-flow.adoc[Git internal and my git working flow]
 
 [.card]
 === Contribute
