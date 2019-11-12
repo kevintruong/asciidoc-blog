@@ -1,26 +1,34 @@
 = UNDERSTANDING GIT & MY GIT WORKING FLOW (PART 1)
-:author: Kevin Truong
+:author:Kevin Truong <kevin.truong.ds@gmail.com>
+:toclevels: 4
+:sectnums:
 :source-highlighter: coderay
+
 == GIT INTERNAL
+
 === Data structure
+
 Including 3 type of structure
 
 * Blob : hashing of the file's byte (file content in bytes array)
 
+[.text-center]
 .Blob object -git internal structure
-image::resource/git_strcuture_object-blob.964129b5.png[align="center"]
+image::git_strcuture_object-blob.964129b5.png[]
 * File Tree : hashing of names and folder definition with file blob.
 In another words, File Tree is hashing of filename/folder which blob belong.
 
+[.text-center]
 .Tree object - git internal structure
-image::./resource/git_internal_object-tree.049e94f4.png[align="center"]
+image::git_internal_object-tree.049e94f4.png[]
 
 in another
 * Commit: Metadata for author,commit, timestamp and message.
 Then hashing the metadata we have hash of commit
 
+[.text-center]
 .Commit Object - git internal structure
-image::resource/object-commit.076d6b0d.png[align="center"]
+image::object-commit.076d6b0d.png[]
 
 With 3 types of data structure, Bellow is my thought about them:
 When we make commit by command bellow
@@ -56,12 +64,13 @@ And also easy to comparing the change between the current with last one.
 Simply by vimdiff the current blob with the previous.
 Or want to get changing history of a file, git can get the history of the file simple by search in linked list of commit to find all commits which involved changing on the file.
 
+[.text-center]
 .GIT Object
-image::resource/objects-example.d8743d1c.png[align="center"]
+image::objects-example.d8743d1c.png[]
 
 For example:
 
-* We want to find info of a commihttps://news.ycombinator.com/frontvt.
+* We want to find info of a commit.
 
 ** We know that the commit hashing contained hashing tree,author, timestamp.
 from hashing tree contained hashing blob of added files and hashing tree of its parent. with each hashing blob , we can file file changes specific, with each hashing tree parent, we know the change belongs what parent.
