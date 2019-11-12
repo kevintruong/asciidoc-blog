@@ -1,2 +1,37 @@
 = UNDERSTANDING GIT & MY WORK FLOW
 
+== GIT INTERNAL
+=== Data structure
+Including 3 type of structure
+
+* Blob : hashing of the file's byte (file content in bytes array)
+* File Tree : hashing of names and folder definition with file blob. In another words, File Tree is
+hashing of filename/folder which blob belong.
+in another
+* Commit: Metadata for author,commit, timestamp and message. Then hashing the metadata we have hash of commit
+
+With 3 types of data structure, Bellow is my thought about them:
+When we make commit by command bellow
+[source]
+----
+git add -u # add all modified , prepare for a commit
+# for example there are 2 modified files: test1.txt and test2.txt be added
+git commit -m "this is my commit"
+----
+step 1: git will hashing content of added file `test1.txt` and `test2.txt`
+[source]
+----
+for example:
+test1.txt hashing : 0xabcd
+test2.txt hashing : 0xcdef
+----
+step 2: git also create hahshing filename and its parent folder of added file. If the hash value is not exist,
+git will create an entry to stored the new hash value.
+step 3: git hashing the metadata of commit. Here have some tricky:
+
+* the hashing of commit will content the hashing of tree which changed file belong
+* Hashing of blob files will be linked to tree. Each time the file changed will create
+a new hash for the file. the new hash will add to the tree
+* when a file not changed but move or rename , its blod hashing will remain,
+but it will changed the tree
+
