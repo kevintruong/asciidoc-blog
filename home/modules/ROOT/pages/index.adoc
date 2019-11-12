@@ -2,6 +2,25 @@
 :page-layout: home
 :!sectids:
 
+I do love writing recently,
+My wife is designer, she also love to have
+personal website to present many project she already done. But there have problems
+that is she is using Wordpress to make her website. And I have trouble with it.
+feel complicated to configure, backup to bringe up a website. And then , when
+everything done, need to move the current webstite from the host to another it realy annoying me.
+Luckily that I found a really great platform for documentation, call antora,
+basically, it based on asciidoc and a lot of work to make a documentation platform to be exist.
+I was looking around github and another resources to see what `antora` can be done. and be excited about
+what it can do.
+Form there, I also have an ideal about simple blog platfom using antora to solve my
+wife (also myself) problems is create a simple blog platform hosting in
+S3 (static web), using git as CRM module, Using asciidoc for formating.
+I also found out that the ideal already work by `COUCHBASE` , they already done with
+their docs website. and It means I will save lot of works by re-use they work
+basically, just edit the `ui-bundle` and add some python/shell script for auto deploy
+the work to S3, maybe something like DEVOPS for auto update the new/modify blog whenever
+I make a change in my github CRM
+
 [.cards.cards-2.personas.conceal-title]
 == {empty}
 
