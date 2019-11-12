@@ -9,70 +9,85 @@ Including 3 type of structure
 
 .Blob object -git internal structure
 image::resource/git_strcuture_object-blob.964129b5.png[align="center"]
-* File Tree : hashing of names and folder definition with file blob. In another words, File Tree is
-hashing of filename/folder which blob belong.
+* File Tree : hashing of names and folder definition with file blob.
+In another words, File Tree is hashing of filename/folder which blob belong.
 
 .Tree object - git internal structure
 image::./resource/git_internal_object-tree.049e94f4.png[align="center"]
 
 in another
-* Commit: Metadata for author,commit, timestamp and message. Then hashing the metadata we have hash of commit
+* Commit: Metadata for author,commit, timestamp and message.
+Then hashing the metadata we have hash of commit
 
 .Commit Object - git internal structure
 image::resource/object-commit.076d6b0d.png[align="center"]
 
 With 3 types of data structure, Bellow is my thought about them:
 When we make commit by command bellow
+
 [source,bash]
 ----
 git add -u # add all modified , prepare for a commit
 # for example there are 2 modified files: test1.txt and test2.txt be added
 git commit -m "this is my commit"
 ----
+
 step 1: git will hashing content of added file `test1.txt` and `test2.txt`
+
 [source,text]
 ----
 for example:
 test1.txt hashing : 0xabcd
 test2.txt hashing : 0xcdef
 ----
-step 2: git also create hahshing filename and its parent folder of added file. If the hash value is not exist,
-git will create an entry to stored the new hash value.
-step 3: git hashing the metadata of commit. Here have some tricky:
+
+step 2: git also create hahshing filename and its parent folder of added file.
+If the hash value is not exist, git will create an entry to stored the new hash value.
+step 3: git hashing the metadata of commit.
+Here have some tricky:
 
 * the hashing of commit will content the hashing of tree which changed file belong
-* Hashing of blob files will be linked to tree. Each time the file changed will create
-a new hash for the file. the new hash will add to the tree
-* when a file not changed but move or rename , its blob hashing will remain,
-but it will changed the tree hashing. At the time, the blod hashing is linked to the new hashing tree.
-* We know about metadata hashing, with each commit will hashing the metadata. the hashing metadata contain
-hashing tree, the hashing tree contained the linked hashing blob of added files. So everything is linked together.
-that why we can find infomation related to a file,commit, folder,author or or specific time.
+* Hashing of blob files will be linked to tree.
+Each time the file changed will create a new hash for the file. the new hash will add to the tree
+* when a file not changed but move or rename , its blob hashing will remain, but it will changed the tree hashing.
+At the time, the blod hashing is linked to the new hashing tree.
+* We know about metadata hashing that with each commit will hashing the metadata. the hashing metadata contain hashing tree, the hashing tree contained the linked hashing blob of added files. so, from hashing commit we can found hashing blob of added files in the commit.
+And also easy to comparing the change between the current with last one.
+Simply by vimdiff the current blob with the previous.
+Or want to get changing history of a file, git can get the history of the file simple by search in linked list of commit to find all commits which involved changing on the file.
+
+.GIT Object
+image::resource/objects-example.d8743d1c.png[align="center"]
 
 For example:
 
-* We want to find info of a commit.
+* We want to find info of a commihttps://news.ycombinator.com/frontvt.
 
 ** We know that the commit hashing contained hashing tree,author, timestamp.
-from hashing tree contained hashing blob of added files and hashing tree of its parent. with each hashing blob , we can file
-file changes specific, with each hashing tree parent, we know the change belongs what parent. The process will be recursived
-to the GIT ROOT or the the top level of tree folder has changed. Conclusion, from commit hashing, we know all change
-in this commit by searching recursive all info linked to its hashing.
+from hashing tree contained hashing blob of added files and hashing tree of its parent. with each hashing blob , we can file file changes specific, with each hashing tree parent, we know the change belongs what parent.
+The process will be recursived to the GIT ROOT or the the top level of tree folder has changed.
+Conclusion, from commit hashing, we know all change in this commit by searching recursive all info linked to its hashing.
 * We want to find all change/commit in a folder.
+
 [source,bash]
 ----
-#!/usr/bin/env bash
 cd "<your git sub folder>"
 git log ./
 ----
-** we know about git will store tree hashing of each folder. Then the work of get all commint/change in a specific
-folder is simple by searching all commit which have the tree hashing of folder.
+
+** we know about git will store tree hashing of each folder.
+Then the work of get all commint/change in a specific folder is simple by searching all commit which have the tree hashing of folder.
 
 By using three different types of structure, git can provide all we need about a source project.
 
 === Understanding about git rebase and git merge
-//TODO must fill about git merge and git rebase, why use git rebase over git merge
 
+We already know about git internal.
+Basically, there use three types of strureture and linked togeter to to make git become a perfect source version control and basic difference between `git merge` and `git rebase`.
+The next thing is basic way to use git to manage your source code in a project.
+
+//TODO must fill about git merge and git rebase, why use git rebase over git merge
 == MY GIT WORKING FLOW
 
 === GIT FLOW BRIEF
+
