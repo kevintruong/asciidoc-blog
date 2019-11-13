@@ -3,6 +3,7 @@
 :toclevels: 4
 :sectnums:
 :source-highlighter: coderay
+:imagesdir: ../assets/images
 
 == GIT INTERNAL
 
@@ -95,6 +96,31 @@ We already know about git internal.
 Basically, there use three types of strureture and linked togeter to to make git become a perfect source version control and basic difference between `git merge` and `git rebase`.
 The next thing is basic way to use git to manage your source code in a project.
 
+.prepare for merge/rebase
+image::merge-rebase01.svg[align="center"]
+
+Short Version:
+
+* Merge takes all the changes in one branch and merges them into another branch in one commit.
+* Rebase says I want the point at which I branched to move to a new starting point So when do you use either one?
+
+In another word (Long answer):
+
+* Merge Let's say you have created a branch for the purpose of developing a single feature.
+When you want to bring those changes back to master, you probably want merge (you don't care about maintaining all of the interim commits).
+
+.Merge feature to master
+image::merge-commit02.svg[align="center"]
+
+* Rebase A second scenario would be if you started doing some development and then another developer made an unrelated change.
+You probably want to pull and then rebase to base your changes from the current version from the repo.
+
+.Rebase feature to master
+image::rebase-commit03.svg[align="center"]
+
+==== Git merge
+
+==== Git rebase
 //TODO must fill about git merge and git rebase, why use git rebase over git merge
 == MY GIT WORKING FLOW
 
