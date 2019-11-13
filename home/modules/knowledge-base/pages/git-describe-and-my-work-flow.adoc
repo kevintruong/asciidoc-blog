@@ -118,11 +118,40 @@ You probably want to pull and then rebase to base your changes from the current 
 .Rebase feature to master
 image::rebase-commit03.svg[align="center"]
 
-==== Git merge
+so, what should I use `git rebase` or `git merge`. As I thought It depends on your git flow working.
+with me, I will use `git rebase` for
 
-==== Git rebase
+==== Git merge
+* Git merge explicit (Merge non-fast forward)
+
+.Merge non-fast-forward
+image::what-is-a-merge.gif[align="center"]
+
+* Git merge fast forward/rebase
+
+
+.Merge on fast forward/rebase
+image::what-is-a-fast-forward.gif[align="center"]
+
+* Git merge squash
+* Command
+[source,bash]
+----
+git checkout master
+git merge --squash "<your_feature_branch"
+----
+* Description
+** GIT compacts your commits in feature branch into one
+** GIT merge the new compact commit to master
+
+.Squash on merge in action
+image::squash-on-merge.gif[align="center"]
+
 //TODO must fill about git merge and git rebase, why use git rebase over git merge
 == MY GIT WORKING FLOW
 
 === GIT FLOW BRIEF
+
+
+== Reference
 
