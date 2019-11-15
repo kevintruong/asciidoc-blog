@@ -139,3 +139,10 @@ You can find the report in the [.path]_xref-validator.log_ file.
 == Contributing
 
 To learn how to use the playbook and generate the docs site locally, see our {url-contribute}[contributing guide].
+
+== Antora docker build 
+
+[source,DockerFile]
+----
+docker build -t antora:local .
+----
