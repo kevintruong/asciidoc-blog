@@ -123,12 +123,22 @@ with me, I will use `git rebase` for
 
 ==== Git merge
 * Git merge explicit (Merge non-fast forward)
+** GIT merge command
+[source,bash]
+----
+git checkout feature
+git merge master
+#or simple just one command to merge feature branch on master
+git merge feature master
+----
+* Description
+** git create a new commit with unify the work done in two branch. How about internal 
 
-.Merge non-fast-forward
-image::what-is-a-merge.gif[align="center"]
+
+.Merge non-fast-forward in action
+image::what-is-a-merge.gif[align=center]
 
 * Git merge fast forward/rebase
-
 
 .Merge on fast forward/rebase
 image::what-is-a-fast-forward.gif[align="center"]
@@ -151,7 +161,6 @@ image::squash-on-merge.gif[align="center"]
 == MY GIT WORKING FLOW
 
 === GIT FLOW BRIEF
-
 
 == Reference
 
