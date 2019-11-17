@@ -146,3 +146,4 @@ To learn how to use the playbook and generate the docs site locally, see our {ur
 ----
 docker build -t antora:local .
 ----
+=== RUN antora static web
