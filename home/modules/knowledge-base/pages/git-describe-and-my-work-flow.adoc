@@ -56,9 +56,10 @@ kevinrav@hieule-Latitude-5480:~/project/KEVIN/asciidoc-blog$ git ls-tree 841185e
 ----
 
 About tree object, when its contents is changed then it led to git will create a new tree object.
-For example: we create new change in the current tree object by modify file README.adoc. Currenly,
-the `README.adoc` have hashing is `58731f2bf9d5c803061c62d63012931f1e3e7b68`
+For example: we create new change in the current tree object by modify file README.adoc.
+Currenly, the `README.adoc` have hashing is `58731f2bf9d5c803061c62d63012931f1e3e7b68`
 for now make a commit, and the result should be like below:
+
 [source,bash]
 ----
 kevinrav@hieule-Latitude-5480:~/project/KEVIN/asciidoc-blog$ git cat-file -p 83defeea0d72a2e2e235fd546c32328ed52b54e9
@@ -91,9 +92,9 @@ kevinrav@hieule-Latitude-5480:~/project/KEVIN/asciidoc-blog$ git ls-tree 73465cd
 040000 tree 0d5896d53bdd949a94273f032ebad4f028683b48    ui-bundle
 kevinrav@hieule-Latitude-5480:~/project/KEVIN/asciidoc-blog$
 ----
-naturally, because the file `README.adoc` is change is content then led to the hashing is change from the old hashing number
-to new one is `917449df8f8ad38979c86af887a76aed6ca341f2` the as expected the hashing of tree object is change also. Or in another words,
-git create new tree object to store the current snapshot of data.
+
+naturally, because the file `README.adoc` is change is content then led to the hashing is change from the old hashing number to new one is `917449df8f8ad38979c86af887a76aed6ca341f2` the as expected the hashing of tree object is change also.
+Or in another words, git create new tree object to store the current snapshot of data.
 
 [.text-center]
 .Tree object - git internal structure
