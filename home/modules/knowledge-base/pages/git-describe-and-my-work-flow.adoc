@@ -1,21 +1,23 @@
-= UNDERSTANDING GIT & MY GIT WORKING FLOW (PART 1)
+= GIT INTERNAL
 :author:Kevin Truong <kevin.truong.ds@gmail.com>
 :toclevels: 4
 :sectnums:
 :source-highlighter: coderay
 :imagesdir: ../assets/images
 
-== GIT INTERNAL
-
-=== Data structure
+== Data structure
 
 Including 3 type of structure
+
+=== Blob
 
 * Blob : hashing of the file's byte (file content in bytes array)
 
 [.text-center]
 .Blob object -git internal structure
 image::git_strcuture_object-blob.964129b5.png[]
+
+=== Tree Object
 
 * File Tree : A tree is simply a list of quadruples (permission, type, hash, name).
 the hash of tree is based on the contents of the tree, which means on the names, permissions, types, and hashes of its leaves.
@@ -100,6 +102,8 @@ Or in another words, git create new tree object to store the current snapshot of
 .Tree object - git internal structure
 image::git_internal_object-tree.049e94f4.png[]
 
+=== Commit object
+
 * Commit: Metadata for author,commit, timestamp and message.
 Then hashing the metadata we have hash of commit
 
@@ -166,7 +170,9 @@ Then the work of get all commint/change in a specific folder is simple by search
 
 By using three different types of structure, git can provide all we need about a source project.
 
-=== Understanding about git rebase and git merge
+== git rebase and git merge
+
+=== Brief
 
 We already know about git internal.
 Basically, there use three types of strureture and linked togeter to to make git become a perfect source version control and basic difference between `git merge` and `git rebase`.
@@ -198,9 +204,10 @@ so, what should I use `git rebase` or `git merge`.
 As I thought It depends on your git flow working.
 with me, I will use `git rebase` for
 
-==== Git merge
+=== Git merge
 
-* Git merge explicit (Merge non-fast forward)
+==== Git merge explicit (Merge non-fast forward)
+
 ** GIT merge command
 
 [source,bash]
@@ -296,12 +303,13 @@ the tree object of `bak` will have the hash the same with the hashing tree of th
 .Merge non-fast-forward in action
 image::what-is-a-merge.gif[align=center]
 
-* Git merge fast forward/rebase
+==== Git merge fast forward/rebase
 
 .Merge on fast forward/rebase
 image::what-is-a-fast-forward.gif[align="center"]
 
-* Git merge squash
+==== Git merge squash
+
 * Command
 
 [source,bash]
@@ -317,10 +325,4 @@ git merge --squash "<your_feature_branch"
 .Squash on merge in action
 image::squash-on-merge.gif[align="center"]
 
-//TODO must fill about git merge and git rebase, why use git rebase over git merge
-== MY GIT WORKING FLOW
-
-=== GIT FLOW BRIEF
-
 == Reference
-

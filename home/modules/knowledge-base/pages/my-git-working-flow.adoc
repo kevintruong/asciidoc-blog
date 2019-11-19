@@ -1,0 +1,6 @@
+//TODO must fill about git merge and git rebase, why use git rebase over git merge
+= MY GIT WORKING FLOW
+
+== GIT FLOW BRIEF
+
+== Reference
