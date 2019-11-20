@@ -303,14 +303,36 @@ look like the tree is containt hashing of GIT ROOT dir.
 The tree will store a hashing of all blob of files contain in ROOT DIR Acording to above section, each tree contain hashing of all blob its contain.
 
 
-
 .Merge non-fast-forward in action
 image::what-is-a-merge.gif[align=center]
 
 ==== Git merge fast forward/rebase
 
+by default When you merge a branch to master.
+If the master has not any change from it fork to feature branch.
+Then when we merge the feature to the master, Git will not create a merge commit by default, in stead of that, git will move all commit in feature branch to master branch.
+It is called git commit fast forward.
+In another words, it could also git rebase.
+Basically, git rebase can understand like this.
+When we make a git rebase a feature branch with master by command
+
+[source,bash]
+----
+git checkout fea_example
+git rebase master
+----
+
+git will try to move the fork commit from the old to the latest commit of master branch.
+
+image::git-rebase-in-action.svg[]
+in the image above, We can see that git will move the fork commit from the old to the new
+
 .Merge on fast forward/rebase
 image::what-is-a-fast-forward.gif[align="center"]
+The different betwen git merge fast forward and git rebase is only make git merge fast forward from branch (A) with another B only when A is on the latest commit which commit B fork from.
+Git base in another way , asking GIT to update the fork commit of B from the latest one of A if A has new commit.
+Then when you make a git merge B to A then it should be a git merge fast forward (if --no-ff does not declare).
+We could understand that git rebase is pre-process state for `git merge fast forward`
 
 ==== Git merge squash
 
@@ -329,4 +351,17 @@ git merge --squash "<your_feature_branch"
 .Squash on merge in action
 image::squash-on-merge.gif[align="center"]
 
+for example:
+[source,bash]
+----
+git checkout master
+git merge --squash fea_a
+----
+
+`git merge --squash` will rewrite you history by compose all commit in the branch `fea_a` before make a git merge the master with new squash commit
+
 == Reference
+https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase[git-rebase-atlassian]
+https://git-scm.com/book/en/v2/Git-Internals-Git-Objectsp[Git Internal - Git Objects]
+
+
