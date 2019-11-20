@@ -300,7 +300,7 @@ The return output is
 ----
 
 look like the tree is containt hashing of GIT ROOT dir.
-The tree will store a hashing of all blob of files contain in ROOT DIR Acording to above section, Each tree contain hashing of all blob its contain.
+The tree will store a hashing of all blob of files contain in ROOT DIR Acording to above section, each tree contain hashing of all blob its contain.
 
 
 
