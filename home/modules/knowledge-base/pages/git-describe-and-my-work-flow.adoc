@@ -1,6 +1,7 @@
 = GIT INTERNAL
 :author:Kevin Truong <kevin.truong.ds@gmail.com>
 :toclevels: 4
+:toc:
 :sectnums:
 :source-highlighter: coderay
 :imagesdir: ../assets/images
@@ -170,7 +171,27 @@ Then the work of get all commint/change in a specific folder is simple by search
 
 By using three different types of structure, git can provide all we need about a source project.
 
-== git rebase and git merge
+=== Example
+
+.Commit,Tree, Blob Object and how there linked together
+image::tree_object_linking.png[]
+
+According to the image above, From commit 1, it will link to a tree call `d8329f` , the tree involved a blob of test.txt.
+The blob has hashing is `83baae`, the containt of blob simple is text `version 1`.
+
+so, in the second commit, we make a change on test.txt file and also add new file call `new.txt` with its blob hashing is `fa49b0`.
+At the time, because there new file added to the folder (new.txt) then git will create another tree object to store the current blob files and also make a change on `test.txt` file from `version 1` to `version 2`.
+Then git also create new hashing blob if the file `test.txt` and add it to the new tree object.
+
+about the third commit, we add a new folder (tree) call bak.
+Contain the file `test.txt` of first commit and it contains `version 1` as first commit.
+so, Again, the hash of tree object is based on the contents of the tree, which means on the names, permissions, types, and hashes of its leaves.
+Then the tree object of folder `bak` is the same with tree object of the first commit. `d8329f`.
+The I will see in the graph that.
+The third commit link to a new tree object, the tree object contains info formation of the old one: blob of test.txt and new.txt, And has a new tree object of `bak`
+the tree object of `bak` will have the hash the same with the hashing tree of the first commit.
+
+== Git merge
 
 === Brief
 
@@ -204,7 +225,7 @@ so, what should I use `git rebase` or `git merge`.
 As I thought It depends on your git flow working.
 with me, I will use `git rebase` for
 
-=== Git merge
+=== Git merge explanation
 
 ==== Git merge explicit (Merge non-fast forward)
 
@@ -280,25 +301,8 @@ The return output is
 
 look like the tree is containt hashing of GIT ROOT dir.
 The tree will store a hashing of all blob of files contain in ROOT DIR Acording to above section, Each tree contain hashing of all blob its contain.
-bellow is more detail about the tree object
 
-.Tree Object, and how it manages its blobs
-image::tree_object_linking.png[]
 
-According to the image above, From commit 1, it will link to a tree call `d8329f` , the tree involved a blob of test.txt.
-The blob has hashing is `83baae`, the containt of blob simple is text `version 1`.
-
-so, in the second commit, we make a change on test.txt file and also add new file call `new.txt` with its blob hashing is `fa49b0`.
-At the time, because there new file added to the folder (new.txt) then git will create another tree object to store the current blob files and also make a change on `test.txt` file from `version 1` to `version 2`.
-Then git also create new hashing blob if the file `test.txt` and add it to the new tree object.
-
-about the third commit, we add a new folder (tree) call bak.
-Contain the file `test.txt` of first commit and it contains `version 1` as first commit.
-so, Again, the hash of tree object is based on the contents of the tree, which means on the names, permissions, types, and hashes of its leaves.
-Then the tree object of folder `bak` is the same with tree object of the first commit. `d8329f`.
-The I will see in the graph that.
-The third commit link to a new tree object, the tree object contains info formation of the old one: blob of test.txt and new.txt, And has a new tree object of `bak`
-the tree object of `bak` will have the hash the same with the hashing tree of the first commit.
 
 .Merge non-fast-forward in action
 image::what-is-a-merge.gif[align=center]
